@@ -1,6 +1,5 @@
 # Alongside Website
 
-Simple responsive website for a university project.
 
 Files:
 - index.html
