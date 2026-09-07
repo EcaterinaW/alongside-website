@@ -92,6 +92,7 @@ a {
   height: 100%;
   min-height: 560px;
   object-fit: cover;
+  object-position: center 40%;
   display: block;
 }
 
