@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>South America · Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --quote: #EEE5D3;
+      --border: #DCD5C7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Lato", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      width: 100%;
+      padding: 28px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(29, 29, 26, 0.08);
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .nav {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--muted);
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--green);
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 105px 7% 80px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      color: var(--green);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(58px, 8vw, 92px);
+      line-height: 0.95;
+      font-weight: 500;
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* RESOURCES */
+
+    .resources-section {
+      background: var(--light);
+      padding: 95px 7% 100px;
+    }
+
+    .resources-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 50px;
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .resource-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .resource {
+      display: grid;
+      grid-template-columns: 55px 1fr 150px;
+      gap: 28px;
+      align-items: start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      color: var(--gold);
+      padding-top: 8px;
+    }
+
+    .resource-info h3 {
+      margin-bottom: 12px;
+    }
+
+    .resource-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border: 1px solid var(--green);
+      border-radius: 30px;
+      color: var(--green);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      line-height: 1;
+      transition: all 0.2s ease;
+    }
+
+    .resource-button span {
+      font-family: "Lato", sans-serif;
+      font-size: 14px;
+    }
+
+    .resource-button:hover {
+      background: var(--green);
+      color: white;
+    }
+
+    .resource-info p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 650px;
+    }
+
+    .location {
+      justify-self: end;
+      padding-top: 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--green);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* NOTE */
+
+    .note-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 90px 7%;
+    }
+
+    .note {
+      background: var(--quote);
+      padding: 45px 50px;
+      border-radius: 4px;
+    }
+
+    .note .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .note h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .note p {
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* CLOSING */
+
+    .closing {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 90px 7%;
+    }
+
+    .closing .eyebrow {
+      color: #DCD2B6;
+    }
+
+    .closing h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .closing p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--green);
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding: 25px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: rgba(255,255,255,0.65);
+      font-size: 12px;
+    }
+
+    footer .footer-logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      color: white;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .site-header {
+        padding: 24px 6%;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .nav a {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      .hero {
+        padding: 75px 6% 65px;
+      }
+
+      .resources-section {
+        padding: 70px 6%;
+      }
+
+      .resource {
+        grid-template-columns: 40px 1fr;
+        gap: 10px 20px;
+        padding: 30px 0;
+      }
+
+      .resource-number {
+        grid-row: span 2;
+      }
+
+      .location {
+        grid-column: 2;
+        justify-self: start;
+        text-align: left;
+        padding-top: 4px;
+      }
+
+      .note-section {
+        padding: 65px 6%;
+      }
+
+      .note {
+        padding: 35px 28px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .logo {
+        font-size: 29px;
+      }
+
+      .hero h1 {
+        font-size: 62px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-heading h2 {
+        font-size: 42px;
+      }
+
+      .resource-button {
+        font-size: 21px;
+      }
+
+      .resource-info p {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <a href="index.html" class="logo">
+      Alongside <span>♡</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="financial.html" class="active">Financial Support</a>
+      <a href="psychological.html">Psychological Support</a>
+      <a href="about.html">About Website</a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="eyebrow">
+        FINANCIAL SUPPORT · SOUTH AMERICA
+      </div>
+
+      <h1>South America</h1>
+
+      <p>
+        Organizations and programs that may help families affected by
+        childhood cancer with treatment-related costs, transportation,
+        accommodation, food, and everyday needs.
+      </p>
+
+    </section>
+
+
+    <!-- RESOURCES -->
+
+    <section class="resources-section">
+
+      <div class="resources-inner">
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            FINANCIAL RESOURCES
+          </div>
+
+          <h2>
+            Support for families.
+          </h2>
+
+          <p>
+            The organizations below provide different forms of practical,
+            social, and financial support. Eligibility, application
+            procedures, and available services vary, so always check the
+            organization's official website before applying.
+          </p>
+
+        </div>
+
+
+        <div class="resource-list">
+
+
+          <!-- 01 -->
+
+          <article class="resource">
+
+            <div class="resource-number">01</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.fundacionflexer.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundación Natalí Dafne Flexer <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Free support for children and young people with cancer and
+                their families, including guidance with medication,
+                accommodation, transportation, treatment access, and
+                social assistance.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Argentina
+            </div>
+
+          </article>
+
+
+          <!-- 02 -->
+
+          <article class="resource">
+
+            <div class="resource-number">02</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://fmc.org.ar/en/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundación María Cecilia <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Provides comprehensive, free childhood oncology care for
+                low-income children through a multidisciplinary service
+                within a public hospital.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Argentina
+            </div>
+
+          </article>
+
+
+          <!-- 03 -->
+
+          <article class="resource">
+
+            <div class="resource-number">03</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.fundacaosara.org.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundação Sara <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Support for children and adolescents with cancer and their
+                families, including social assistance, transportation,
+                accommodation, food, and help accessing treatment.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Brazil
+            </div>
+
+          </article>
+
+
+          <!-- 04 -->
+
+          <article class="resource">
+
+            <div class="resource-number">04</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://institutoronald.org.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Instituto Ronald McDonald <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Programs that provide families with accommodation, food,
+                transportation, family spaces, and psychosocial support
+                during childhood cancer treatment.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Brazil
+            </div>
+
+          </article>
+
+
+          <!-- 05 -->
+
+          <article class="resource">
+
+            <div class="resource-number">05</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://fnh.cl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundación Nuestros Hijos <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Comprehensive support for children and adolescents with
+                cancer and their families, including social programs,
+                rehabilitation, accommodation, and educational support.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Chile
+            </div>
+
+          </article>
+
+
+          <!-- 06 -->
+
+          <article class="resource">
+
+            <div class="resource-number">06</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://fundacioncamino.cl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundación Camino <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Free accommodation, meals, transportation, psychosocial
+                care, and educational support for adolescents with cancer
+                and their caregivers.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Chile
+            </div>
+
+          </article>
+
+
+          <!-- 07 -->
+
+          <article class="resource">
+
+            <div class="resource-number">07</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://oncomamas.cl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Corporación Oncomamás <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Free comprehensive support for children, adolescents, and
+                families affected by cancer, including assistance with
+                access to treatment and family support services.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Chile
+            </div>
+
+          </article>
+
+
+          <!-- 08 -->
+
+          <article class="resource">
+
+            <div class="resource-number">08</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.sanarcancer.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundación SANAR <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Integral support for children and adolescents with cancer
+                and their families, including social, psychological, and
+                practical assistance during treatment.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Colombia
+            </div>
+
+          </article>
+
+
+          <!-- 09 -->
+
+          <article class="resource">
+
+            <div class="resource-number">09</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://fpc.pe/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundación Peruana de Cáncer <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Free assistance for patients with limited resources,
+                including accommodation, food, social assistance,
+                nursing, and transportation for patients and caregivers.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Peru
+            </div>
+
+          </article>
+
+
+          <!-- 10 -->
+
+          <article class="resource">
+
+            <div class="resource-number">10</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.casaronald.org.pe/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Asociación Casa Ronald McDonald Perú <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Provides a home away from home for children receiving
+                treatment and their families, helping reduce accommodation
+                and daily living costs during treatment.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Peru
+            </div>
+
+          </article>
+
+
+          <!-- 11 -->
+
+          <article class="resource">
+
+            <div class="resource-number">11</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://www.lamagiacuraelcancer.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Asociación de Voluntarias por los Niños con Cáncer · MAGIA
+                  <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Support organization for children with cancer and their
+                families, providing practical assistance and helping
+                families navigate the treatment journey.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Peru
+            </div>
+
+          </article>
+
+
+          <!-- 12 -->
+
+          <article class="resource">
+
+            <div class="resource-number">12</div>
+
+            <div class="resource-info">
+
+              <h3>
+                <a
+                  href="https://perezscremini.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="resource-button"
+                >
+                  Fundación Pérez Scremini <span>→</span>
+                </a>
+              </h3>
+
+              <p>
+                Free comprehensive childhood cancer care in Uruguay,
+                including treatment, medication, transportation, food,
+                psychosocial support, and accommodation for families
+                travelling for treatment.
+              </p>
+
+            </div>
+
+            <div class="location">
+              Uruguay
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- NOTE -->
+
+    <section class="note-section">
+
+      <div class="note">
+
+        <div class="eyebrow">
+          BEFORE APPLYING
+        </div>
+
+        <h2>
+          A note about financial assistance
+        </h2>
+
+        <p>
+          Eligibility requirements, available services, and application
+          procedures can vary between organizations and countries. Some
+          programs may require a referral from a hospital or healthcare
+          professional. Before applying, visit the organization's official
+          website and check the current requirements for your situation.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CLOSING -->
+
+    <section class="closing">
+
+      <div class="eyebrow">
+        SOUTH AMERICA
+      </div>
+
+      <h2>
+        You don't have to navigate this alone.
+      </h2>
+
+      <p>
+        If you are unsure where to begin, a child's healthcare team or
+        hospital social worker may also be able to help identify
+        programs and organizations available in your country.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+      Alongside ♡
+    </div>
+
+    <div>
+      A resource platform for families.
+    </div>
+
+  </footer>
+
+</body>
+</html>
