@@ -601,156 +601,147 @@ footer {
 
 }
 
-/* ––––––––––––––––
-FINANCIAL SUPPORT — REGIONS
-———————————– */
+/* --------------------------------
+   FINANCIAL SUPPORT — REGIONS
+----------------------------------- */
 
-.region-resources {
-padding: 10px 5% 75px;
+.regions-section {
+  padding: 35px 7% 90px;
 }
 
-.region-grid {
-display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 22px;
-max-width: 1200px;
-margin: 0 auto;
+.regions-heading {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
 }
 
-.region-card {
-display: flex;
-flex-direction: column;
-
-min-height: 330px;
-padding: 32px;
-
-background: var(–light);
-border-radius: 22px;
-
-text-decoration: none;
-
-transition:
-transform .25s ease,
-box-shadow .25s ease;
+.regions-heading h2 {
+  margin: 0 0 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 500;
+  line-height: 1;
 }
 
-.region-card:hover {
-transform: translateY(-6px);
-box-shadow: 0 16px 35px rgba(0, 0, 0, .08);
+.regions-heading > p:last-child {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
 }
 
-.region-icon {
-width: 68px;
-height: 68px;
-
-display: grid;
-place-items: center;
-
-margin-bottom: 28px;
-
-border-radius: 50%;
-
-background: var(–cream);
-
-font-size: 31px;
-
-transition: transform .25s ease;
+.regions-list {
+  max-width: 1050px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(83, 107, 82, 0.25);
 }
 
-.region-card:hover .region-icon {
-transform: scale(1.06);
+.region-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 45px;
+  align-items: center;
+  gap: 25px;
+  min-height: 125px;
+  padding: 18px 10px;
+  border-bottom: 1px solid rgba(83, 107, 82, 0.25);
+  color: var(--text);
+  text-decoration: none;
+  transition: padding .25s ease, background .25s ease;
 }
 
-.region-card-content {
-display: flex;
-flex-direction: column;
-flex: 1;
+.region-row:hover {
+  padding-left: 24px;
+  padding-right: 24px;
+  background: rgba(250, 248, 245, 0.55);
 }
 
-.region-label {
-margin: 0 0 7px;
-
-color: var(–gold);
-
-font-size: 10px;
-font-weight: 700;
-letter-spacing: 1.6px;
+.region-number {
+  align-self: start;
+  padding-top: 8px;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2px;
 }
 
-.region-card h2 {
-margin: 0 0 12px;
-
-font-family: “Cormorant Garamond”, serif;
-font-size: 34px;
-font-weight: 600;
-line-height: 1.05;
+.region-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
 
-.region-description {
-max-width: 320px;
-
-margin: 0;
-
-color: var(–muted);
-
-font-size: 15px;
-line-height: 1.6;
+.region-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(30px, 3.2vw, 43px);
+  font-weight: 500;
+  line-height: 1;
+  transition: color .25s ease;
 }
 
-.region-bottom {
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 15px;
-
-margin-top: auto;
-padding-top: 28px;
-
-border-top: 1px solid rgba(180, 162, 118, .25);
+.region-countries {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .5px;
 }
 
-.region-bottom span {
-color: var(–muted);
-
-font-size: 12px;
-letter-spacing: .5px;
+.region-arrow {
+  color: var(--green);
+  font-size: 28px;
+  font-weight: 300;
+  text-align: right;
+  transition: transform .25s ease;
 }
 
-.region-bottom strong {
-color: var(–green);
-
-font-size: 14px;
+.region-row:hover .region-name {
+  color: var(--green);
 }
 
-/* TABLET */
-
-@media (max-width: 900px) {
-
-.region-grid {
-grid-template-columns: repeat(2, minmax(0, 1fr));
+.region-row:hover .region-arrow {
+  transform: translateX(6px);
 }
 
-}
-
-/* PHONE */
+/* MOBILE */
 
 @media (max-width: 600px) {
 
-.region-resources {
-padding: 5px 5% 55px;
-}
+  .regions-section {
+    padding: 20px 6% 60px;
+  }
 
-.region-grid {
-grid-template-columns: 1fr;
-}
+  .regions-heading {
+    margin-bottom: 35px;
+  }
 
-.region-card {
-min-height: 300px;
-padding: 28px;
-}
+  .regions-heading h2 {
+    font-size: 43px;
+  }
 
-.region-card h2 {
-font-size: 31px;
-}
+  .regions-heading > p:last-child {
+    font-size: 15px;
+  }
 
+  .region-row {
+    grid-template-columns: 38px 1fr 25px;
+    gap: 10px;
+    min-height: 105px;
+    padding: 15px 4px;
+  }
+
+  .region-row:hover {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .region-name {
+    font-size: 30px;
+  }
+
+  .region-countries {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .region-arrow {
+    font-size: 22px;
+  }
 }
