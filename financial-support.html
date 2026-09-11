@@ -1,330 +1,952 @@
-/* --------------------------------
-   FINANCIAL SUPPORT PAGE
------------------------------------ */
-
-.financial-hero {
-  padding: 90px 7% 65px;
-  text-align: center;
-}
-
-.financial-hero h1 {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.financial-intro {
-  max-width: 760px; 
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 18px;
-  line-height: 1.7;
-}
-
-
-/* --------------------------------
-   REGIONAL SUPPORT
------------------------------------ */
-
-.regions-section {
-  padding: 35px 7% 90px;
-}
-
-.regions-heading {
-  max-width: 760px;
-  margin: 0 auto 55px;
-  text-align: center;
-}
-
-.regions-heading .eyebrow {
-  margin-bottom: 14px;
-}
-
-.regions-heading h2 {
-  margin: 0 0 18px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(42px, 5vw, 64px);
-  font-weight: 500;
-  line-height: 1;
-}
-
-.regions-heading > p:last-child {
-  max-width: 650px;
-  margin: 0 auto;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.7;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Financial Support | Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --quote: #EEE5D3;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
 
-/* --------------------------------
-   REGION LIST
------------------------------------ */
+    html {
+      scroll-behavior: smooth;
+    }
 
-.regions-list {
-  max-width: 1050px;
-  margin: 0 auto;
-  border-top: 1px solid rgba(83, 107, 82, 0.25);
-}
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--cream);
+      font-family: "Lato", Arial, sans-serif;
+    }
 
-.region-row {
-  display: grid;
-  grid-template-columns: 70px 1fr 45px;
-  align-items: center;
-  gap: 25px;
+    a {
+      color: inherit;
+    }
 
-  min-height: 125px;
-  padding: 18px 10px;
 
-  border-bottom: 1px solid rgba(83, 107, 82, 0.25);
+    /* ================================
+       HEADER
+    ================================= */
 
-  color: var(--text);
-  text-decoration: none;
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
 
-  transition:
-    padding .25s ease,
-    background .25s ease;
-}
+      padding: 18px 6%;
 
-.region-row:hover {
-  padding-left: 24px;
-  padding-right: 24px;
-  background: rgba(250, 248, 245, 0.55);
-}
+      background: var(--light);
+    }
 
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
 
-/* NUMBER */
+      text-decoration: none;
+    }
 
-.region-number {
-  align-self: start;
-  padding-top: 8px;
+    .brand-heart {
+      color: var(--gold);
+      font-size: 38px;
+      line-height: 1;
+    }
 
-  color: var(--gold);
+    .brand-name {
+      display: block;
 
-  font-size: 11px;
-  letter-spacing: 2px;
-}
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      line-height: 1;
+    }
 
+    .brand-tagline {
+      display: block;
 
-/* TEXT */
+      margin-top: 4px;
 
-.region-content {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
+      font-size: 9px;
+      letter-spacing: 2.2px;
+    }
 
-.region-name {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(30px, 3.2vw, 43px);
-  font-weight: 500;
-  line-height: 1;
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
 
-  transition: color .25s ease;
-}
+    .nav a {
+      text-decoration: none;
+      font-size: 15px;
+      transition: color .2s ease;
+    }
 
-.region-countries {
-  color: var(--muted);
-  font-size: 12px;
-  letter-spacing: .5px;
-  line-height: 1.5;
-}
+    .nav a:hover,
+    .nav a.active {
+      color: var(--green);
+    }
 
 
-/* ARROW */
+    /* ================================
+       HERO
+    ================================= */
 
-.region-arrow {
-  color: var(--green);
+    .financial-hero {
+      padding: 95px 7% 70px;
 
-  font-size: 28px;
-  font-weight: 300;
+      text-align: center;
+    }
 
-  text-align: right;
+    .eyebrow {
+      margin: 0 0 14px;
 
-  transition: transform .25s ease;
-}
+      color: #675b42;
 
-.region-row:hover .region-name {
-  color: var(--green);
-}
+      font-size: 13px;
+      letter-spacing: 1.8px;
+    }
 
-.region-row:hover .region-arrow {
-  transform: translateX(6px);
-}
+    .financial-hero h1 {
+      max-width: 900px;
 
+      margin: 0 auto 24px;
 
-/* --------------------------------
-   INFORMATION NOTE
------------------------------------ */
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(48px, 6vw, 78px);
+      font-weight: 500;
+      line-height: .98;
+    }
 
-.financial-note {
-  display: flex;
-  gap: 22px;
+    .financial-intro {
+      max-width: 720px;
 
-  max-width: 1000px;
-  margin: 0 auto 75px;
-  padding: 30px;
+      margin: 0 auto;
 
-  background: var(--quote);
-  border-radius: 18px;
-}
+      color: var(--muted);
 
-.note-icon {
-  flex-shrink: 0;
+      font-size: 18px;
+      line-height: 1.7;
+    }
 
-  width: 42px;
-  height: 42px;
 
-  display: grid;
-  place-items: center;
+    /* ================================
+       REGION SECTION
+    ================================= */
 
-  border: 1px solid var(--gold);
-  border-radius: 50%;
+    .regions-section {
+      padding: 20px 6% 90px;
+    }
 
-  color: var(--gold);
+    .regions-heading {
+      max-width: 760px;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 24px;
-}
+      margin: 0 auto 55px;
 
-.financial-note h2 {
-  margin: 0 0 8px;
-  font-size: 19px;
-}
+      text-align: center;
+    }
 
-.financial-note p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
-}
+    .regions-heading h2 {
+      margin: 0 0 18px;
 
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(40px, 5vw, 60px);
+      font-weight: 500;
+      line-height: 1;
+    }
 
-/* --------------------------------
-   CLOSING SECTION
------------------------------------ */
+    .regions-heading p:last-child {
+      max-width: 650px;
 
-.financial-closing {
-  padding: 70px 7%;
+      margin: 0 auto;
 
-  background: var(--quote);
+      color: var(--muted);
 
-  text-align: center;
-}
+      font-size: 16px;
+      line-height: 1.7;
+    }
 
-.financial-closing h2 {
-  max-width: 800px;
-  margin: 15px auto 0;
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 38px;
-  font-weight: 500;
-  line-height: 1.2;
-}
+    /* ================================
+       REGIONS LIST
+    ================================= */
 
+    .regions-list {
+      max-width: 1050px;
 
-/* --------------------------------
-   TABLET
------------------------------------ */
+      margin: 0 auto;
 
-@media (max-width: 900px) {
+      border-top: 1px solid rgba(83, 107, 82, .28);
+    }
 
-  .financial-note {
-    margin-left: 5%;
-    margin-right: 5%;
-  }
+    .region-link {
+      display: grid;
+      grid-template-columns: 70px 1fr 50px;
+      align-items: center;
+      gap: 25px;
 
-  .region-row {
-    grid-template-columns: 55px 1fr 40px;
-    gap: 18px;
-  }
+      min-height: 125px;
 
-}
+      padding: 18px 10px;
 
+      border-bottom: 1px solid rgba(83, 107, 82, .28);
 
-/* --------------------------------
-   PHONE
------------------------------------ */
+      text-decoration: none;
 
-@media (max-width: 600px) {
+      transition:
+        background .25s ease,
+        padding .25s ease;
+    }
 
-  .financial-hero {
-    padding: 60px 6% 40px;
-  }
+    .region-link:hover {
+      padding-left: 25px;
+      padding-right: 25px;
 
-  .financial-hero h1 {
-    font-size: 44px;
-  }
+      background: rgba(250, 248, 245, .65);
+    }
 
-  .financial-intro {
-    font-size: 16px;
-  }
+    .region-number {
+      align-self: start;
 
+      padding-top: 10px;
 
-  /* REGIONS */
+      color: var(--gold);
 
-  .regions-section {
-    padding: 20px 6% 60px;
-  }
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
 
-  .regions-heading {
-    margin-bottom: 35px;
-  }
+    .region-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-  .regions-heading h2 {
-    font-size: 43px;
-  }
+    .region-name {
+      font-family: "Cormorant Garamond", serif;
 
-  .regions-heading > p:last-child {
-    font-size: 15px;
-  }
+      font-size: clamp(31px, 4vw, 46px);
+      font-weight: 500;
+      line-height: 1;
 
-  .region-row {
-    grid-template-columns: 38px 1fr 25px;
+      transition: color .25s ease;
+    }
 
-    gap: 10px;
+    .region-description {
+      color: var(--muted);
 
-    min-height: 105px;
+      font-size: 12px;
+      line-height: 1.5;
+      letter-spacing: .3px;
+    }
 
-    padding: 15px 4px;
-  }
+    .region-arrow {
+      color: var(--green);
 
-  .region-row:hover {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
+      font-size: 29px;
+      font-weight: 400;
 
-  .region-name {
-    font-size: 30px;
-  }
+      text-align: right;
 
-  .region-countries {
-    font-size: 10px;
-    line-height: 1.5;
-  }
+      transition: transform .25s ease;
+    }
 
-  .region-arrow {
-    font-size: 22px;
-  }
+    .region-link:hover .region-name {
+      color: var(--green);
+    }
 
+    .region-link:hover .region-arrow {
+      transform: translateX(7px);
+    }
 
-  /* NOTE */
 
-  .financial-note {
-    align-items: flex-start;
+    /* ================================
+       INFORMATION NOTE
+    ================================= */
 
-    margin-bottom: 50px;
-    padding: 24px;
-  }
+    .financial-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
 
+      max-width: 1000px;
 
-  /* CLOSING */
+      margin: 0 auto 80px;
+      padding: 30px;
 
-  .financial-closing {
-    padding: 55px 7%;
-  }
+      background: var(--quote);
 
-  .financial-closing h2 {
-    font-size: 31px;
-  }
+      border-radius: 18px;
+    }
 
-}
+    .note-icon {
+      flex-shrink: 0;
+
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+
+      color: var(--gold);
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+    }
+
+    .note-content h2 {
+      margin: 0 0 8px;
+
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .note-content p {
+      margin: 0;
+
+      color: var(--muted);
+
+      line-height: 1.65;
+    }
+
+
+    /* ================================
+       CLOSING
+    ================================= */
+
+    .financial-closing {
+      padding: 75px 7%;
+
+      background: var(--quote);
+
+      text-align: center;
+    }
+
+    .closing-eyebrow {
+      margin: 0 0 14px;
+
+      color: #675b42;
+
+      font-size: 11px;
+      letter-spacing: 2.2px;
+    }
+
+    .financial-closing h2 {
+      max-width: 780px;
+
+      margin: 0 auto;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+
+    /* ================================
+       FOOTER
+    ================================= */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+
+      padding: 30px 5%;
+
+      background: var(--light);
+    }
+
+    .footer-brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+    }
+
+    .footer-tagline {
+      display: block;
+
+      margin-top: 3px;
+
+      color: var(--muted);
+
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      transition: color .2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+
+    /* ================================
+       TABLET
+    ================================= */
+
+    @media (max-width: 850px) {
+
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        gap: 14px 20px;
+      }
+
+      .region-link {
+        grid-template-columns: 55px 1fr 40px;
+        gap: 18px;
+      }
+
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+
+    /* ================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 600px) {
+
+      .site-header {
+        padding: 16px 5%;
+      }
+
+      .brand-name {
+        font-size: 26px;
+      }
+
+      .brand-tagline {
+        font-size: 8px;
+      }
+
+      .nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        width: 100%;
+      }
+
+
+      /* HERO */
+
+      .financial-hero {
+        padding: 60px 6% 45px;
+      }
+
+      .financial-hero h1 {
+        font-size: 45px;
+      }
+
+      .financial-intro {
+        font-size: 16px;
+      }
+
+
+      /* REGIONS */
+
+      .regions-section {
+        padding: 15px 6% 60px;
+      }
+
+      .regions-heading {
+        margin-bottom: 35px;
+      }
+
+      .regions-heading h2 {
+        font-size: 43px;
+      }
+
+      .regions-heading p:last-child {
+        font-size: 15px;
+      }
+
+      .region-link {
+        grid-template-columns: 35px 1fr 25px;
+
+        gap: 10px;
+
+        min-height: 105px;
+
+        padding: 15px 3px;
+      }
+
+      .region-link:hover {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .region-number {
+        padding-top: 7px;
+
+        font-size: 9px;
+      }
+
+      .region-name {
+        font-size: 30px;
+      }
+
+      .region-description {
+        font-size: 10px;
+      }
+
+      .region-arrow {
+        font-size: 22px;
+      }
+
+
+      /* NOTE */
+
+      .financial-note {
+        margin: 0 6% 55px;
+
+        padding: 23px;
+
+        gap: 15px;
+      }
+
+      .note-icon {
+        width: 38px;
+        height: 38px;
+
+        font-size: 22px;
+      }
+
+      .note-content h2 {
+        font-size: 17px;
+      }
+
+      .note-content p {
+        font-size: 14px;
+      }
+
+
+      /* CLOSING */
+
+      .financial-closing {
+        padding: 55px 7%;
+      }
+
+      .financial-closing h2 {
+        font-size: 32px;
+      }
+
+
+      /* FOOTER */
+
+      .footer-links {
+        gap: 14px 20px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- ================================
+       HEADER
+  ================================= -->
+
+  <header class="site-header">
+
+    <a href="index.html" class="brand">
+
+      <span class="brand-heart">♡</span>
+
+      <span>
+        <span class="brand-name">Alongside</span>
+        <span class="brand-tagline">SUPPORT FOR THE JOURNEY</span>
+      </span>
+
+    </a>
+
+
+    <nav class="nav">
+
+      <a href="index.html">Home</a>
+
+      <a href="financial.html" class="active">
+        Financial Support
+      </a>
+
+      <a href="psychological.html">
+        Psychological Support
+      </a>
+
+      <a href="about.html">
+        About Website
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- ================================
+       HERO
+  ================================= -->
+
+  <main>
+
+    <section class="financial-hero">
+
+      <p class="eyebrow">
+        FINANCIAL SUPPORT
+      </p>
+
+      <h1>
+        Resources that may help ease the financial burden.
+      </h1>
+
+      <p class="financial-intro">
+        Childhood cancer can create financial pressure for the whole family.
+        Alongside brings together organizations and support resources from
+        different parts of the world that may help with treatment-related
+        expenses and everyday needs.
+      </p>
+
+    </section>
+
+
+
+    <!-- ================================
+         REGIONS
+    ================================= -->
+
+    <section class="regions-section">
+
+      <div class="regions-heading">
+
+        <p class="eyebrow">
+          FIND SUPPORT BY REGION
+        </p>
+
+        <h2>
+          Resources around the world.
+        </h2>
+
+        <p>
+          Choose your region to explore organizations and programs
+          that may provide financial assistance, accommodation,
+          transportation, treatment support, or help with everyday expenses.
+        </p>
+
+      </div>
+
+
+
+      <div class="regions-list">
+
+
+        <!-- NORTH AMERICA -->
+
+        <a href="north-america.html" class="region-link">
+
+          <span class="region-number">
+            01
+          </span>
+
+          <span class="region-info">
+
+            <span class="region-name">
+              North America
+            </span>
+
+            <span class="region-description">
+              United States · Canada · Mexico
+            </span>
+
+          </span>
+
+          <span class="region-arrow">
+            →
+          </span>
+
+        </a>
+
+
+
+        <!-- SOUTH AMERICA -->
+
+        <a href="south-america.html" class="region-link">
+
+          <span class="region-number">
+            02
+          </span>
+
+          <span class="region-info">
+
+            <span class="region-name">
+              South America
+            </span>
+
+            <span class="region-description">
+              Argentina · Brazil · Chile · Colombia
+            </span>
+
+          </span>
+
+          <span class="region-arrow">
+            →
+          </span>
+
+        </a>
+
+
+
+        <!-- EUROPE -->
+
+        <a href="europe.html" class="region-link">
+
+          <span class="region-number">
+            03
+          </span>
+
+          <span class="region-info">
+
+            <span class="region-name">
+              Europe
+            </span>
+
+            <span class="region-description">
+              Moldova · Romania · Germany · France · Italy
+            </span>
+
+          </span>
+
+          <span class="region-arrow">
+            →
+          </span>
+
+        </a>
+
+
+
+        <!-- ASIA -->
+
+        <a href="asia.html" class="region-link">
+
+          <span class="region-number">
+            04
+          </span>
+
+          <span class="region-info">
+
+            <span class="region-name">
+              Asia
+            </span>
+
+            <span class="region-description">
+              Japan · India · South Korea · Bangladesh
+            </span>
+
+          </span>
+
+          <span class="region-arrow">
+            →
+          </span>
+
+        </a>
+
+
+
+        <!-- AFRICA -->
+
+        <a href="africa.html" class="region-link">
+
+          <span class="region-number">
+            05
+          </span>
+
+          <span class="region-info">
+
+            <span class="region-name">
+              Africa
+            </span>
+
+            <span class="region-description">
+              Ghana · Kenya · Nigeria · South Africa
+            </span>
+
+          </span>
+
+          <span class="region-arrow">
+            →
+          </span>
+
+        </a>
+
+
+
+        <!-- AUSTRALIA & OCEANIA -->
+
+        <a href="oceania.html" class="region-link">
+
+          <span class="region-number">
+            06
+          </span>
+
+          <span class="region-info">
+
+            <span class="region-name">
+              Australia &amp; Oceania
+            </span>
+
+            <span class="region-description">
+              Australia · New Zealand · Pacific Islands
+            </span>
+
+          </span>
+
+          <span class="region-arrow">
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         INFORMATION NOTE
+    ================================= -->
+
+    <section class="financial-note">
+
+      <div class="note-icon">
+        i
+      </div>
+
+      <div class="note-content">
+
+        <h2>
+          A note about financial assistance
+        </h2>
+
+        <p>
+          Eligibility requirements, available funding, application procedures,
+          and the types of support offered can change. Some organizations may
+          require families to apply through a hospital, social worker, or
+          healthcare team. Always check the organization's official website
+          for the most current information.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         CLOSING
+    ================================= -->
+
+    <section class="financial-closing">
+
+      <p class="closing-eyebrow">
+        YOU DON'T HAVE TO NAVIGATE THIS ALONE
+      </p>
+
+      <h2>
+        Your healthcare team may also be able to connect you with
+        local financial resources and family support.
+      </h2>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ================================
+       FOOTER
+  ================================= -->
+
+  <footer>
+
+    <div>
+
+      <div class="footer-brand">
+        Alongside
+      </div>
+
+      <span class="footer-tagline">
+        SUPPORT FOR THE JOURNEY
+      </span>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="financial.html">
+        Financial Support
+      </a>
+
+      <a href="psychological.html">
+        Psychological Support
+      </a>
+
+      <a href="about.html">
+        About Website
+      </a>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
