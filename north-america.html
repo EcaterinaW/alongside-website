@@ -1,289 +1,491 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>North America · Alongside</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style> 
+  <style>
+
     :root {
+
       --cream: #F2ECDD;
+
       --light: #FAF8F5;
+
       --green: #536B52;
+
       --gold: #B4A276;
+
       --text: #1D1D1A;
+
       --muted: #5C5A54;
+
       --quote: #EEE5D3;
+
       --border: #DCD5C7;
+
     }
 
     * {
+
       box-sizing: border-box;
+
       margin: 0;
+
       padding: 0;
+
     }
 
     body {
+
       background: var(--cream);
+
       color: var(--text);
+
       font-family: "Lato", sans-serif;
+
       line-height: 1.6;
+
     }
 
     a {
+
       color: inherit;
+
       text-decoration: none;
+
     }
 
     /* HEADER */
 
     .site-header {
+
       width: 100%;
+
       padding: 28px 7%;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       border-bottom: 1px solid rgba(29, 29, 26, 0.08);
+
     }
 
     .logo {
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 32px;
+
       font-weight: 600;
+
       letter-spacing: 0.5px;
+
     }
 
     .logo span {
+
       color: var(--green);
+
     }
 
     .nav {
+
       display: flex;
+
       gap: 34px;
+
       align-items: center;
+
     }
 
     .nav a {
+
       font-size: 13px;
+
       text-transform: uppercase;
+
       letter-spacing: 1.4px;
+
       color: var(--muted);
+
       transition: 0.2s ease;
+
     }
 
     .nav a:hover,
+
     .nav a.active {
+
       color: var(--green);
+
     }
 
     /* HERO */
 
     .hero {
+
       max-width: 1100px;
+
       margin: 0 auto;
+
       padding: 105px 7% 80px;
+
     }
 
     .eyebrow {
+
       font-size: 12px;
+
       text-transform: uppercase;
+
       letter-spacing: 2.4px;
+
       color: var(--green);
+
       font-weight: 600;
+
       margin-bottom: 20px;
+
     }
 
     .hero h1 {
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: clamp(58px, 8vw, 92px);
+
       line-height: 0.95;
+
       font-weight: 500;
+
       margin-bottom: 28px;
+
     }
 
     .hero p {
+
       max-width: 700px;
+
       font-size: 18px;
+
       line-height: 1.8;
+
       color: var(--muted);
+
       font-weight: 300;
+
     }
 
     /* RESOURCES */
 
     .resources-section {
+
       background: var(--light);
+
       padding: 95px 7% 100px;
+
     }
 
     .resources-inner {
+
       max-width: 1100px;
+
       margin: 0 auto;
+
     }
 
     .section-heading {
+
       margin-bottom: 55px;
+
     }
 
     .section-heading h2 {
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 50px;
+
       line-height: 1;
+
       font-weight: 500;
+
       margin-bottom: 18px;
+
     }
 
     .section-heading p {
+
       max-width: 690px;
+
       color: var(--muted);
+
       font-size: 16px;
+
       line-height: 1.8;
+
     }
 
     .resource-list {
+
       border-top: 1px solid var(--border);
+
     }
 
     .resource {
+
       display: grid;
-      grid-template-columns: 55px minmax(250px, 1fr) 170px 150px;
-      gap: 30px;
-      align-items: center;
-      padding: 30px 0;
+
+      grid-template-columns: 55px 1fr 150px;
+
+      gap: 28px;
+
+      align-items: start;
+
+      padding: 32px 0;
+
       border-bottom: 1px solid var(--border);
+
     }
 
     .resource-number {
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 22px;
+
       color: var(--gold);
+
+      padding-top: 8px;
+
     }
 
     .resource-info h3 {
+
+      margin-bottom: 12px;
+
+    }
+
+    .resource-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 10px 18px;
+
+      border: 1px solid var(--green);
+
+      border-radius: 30px;
+
+      color: var(--green);
+
       font-family: "Cormorant Garamond", serif;
-      font-size: 28px;
-      line-height: 1.1;
-      font-weight: 600;
-      margin-bottom: 8px;
+
+      font-size: 23px;
+
+      line-height: 1;
+
+      transition: all 0.2s ease;
+
+    }
+
+    .resource-button span {
+
+      font-family: "Lato", sans-serif;
+
+      font-size: 14px;
+
+    }
+
+    .resource-button:hover {
+
+      background: var(--green);
+
+      color: white;
+
     }
 
     .resource-info p {
+
       color: var(--muted);
+
       font-size: 14px;
-      line-height: 1.65;
-      max-width: 540px;
+
+      line-height: 1.7;
+
+      max-width: 650px;
+
     }
 
     .location {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--green);
-      font-weight: 600;
-    }
 
-    .visit {
       justify-self: end;
-      border: 1px solid var(--green);
-      color: var(--green);
-      padding: 10px 17px;
-      border-radius: 30px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
 
-    .visit:hover {
-      background: var(--green);
-      color: white;
+      padding-top: 12px;
+
+      font-size: 11px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1.5px;
+
+      color: var(--green);
+
+      font-weight: 600;
+
+      text-align: right;
+
     }
 
     /* NOTE */
 
     .note-section {
+
       max-width: 1100px;
+
       margin: 0 auto;
+
       padding: 90px 7%;
+
     }
 
     .note {
+
       background: var(--quote);
+
       padding: 45px 50px;
+
       border-radius: 4px;
+
     }
 
     .note .eyebrow {
+
       margin-bottom: 12px;
+
     }
 
     .note h2 {
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 38px;
+
       font-weight: 500;
+
       margin-bottom: 15px;
+
     }
 
     .note p {
+
       color: var(--muted);
+
       max-width: 760px;
+
       line-height: 1.8;
+
       font-size: 15px;
+
     }
 
     /* CLOSING */
 
     .closing {
+
       background: var(--green);
+
       color: white;
+
       text-align: center;
+
       padding: 90px 7%;
+
     }
 
     .closing .eyebrow {
+
       color: #DCD2B6;
+
     }
 
     .closing h2 {
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: clamp(42px, 6vw, 68px);
+
       line-height: 1;
+
       font-weight: 500;
+
       margin-bottom: 20px;
+
     }
 
     .closing p {
+
       max-width: 600px;
+
       margin: 0 auto;
+
       color: rgba(255,255,255,0.82);
+
       line-height: 1.8;
+
       font-size: 16px;
+
     }
 
     /* FOOTER */
 
     footer {
+
       background: var(--green);
+
       border-top: 1px solid rgba(255,255,255,0.15);
+
       padding: 25px 7%;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
+
       color: rgba(255,255,255,0.65);
+
       font-size: 12px;
+
     }
 
     footer .footer-logo {
+
       font-family: "Cormorant Garamond", serif;
+
       font-size: 23px;
+
       color: white;
+
     }
 
     /* MOBILE */
@@ -291,92 +493,139 @@
     @media (max-width: 850px) {
 
       .site-header {
+
         padding: 24px 6%;
+
         flex-direction: column;
+
         gap: 20px;
+
       }
 
       .nav {
+
         gap: 18px;
+
         flex-wrap: wrap;
+
         justify-content: center;
+
       }
 
       .nav a {
+
         font-size: 10px;
+
         letter-spacing: 1px;
+
       }
 
       .hero {
+
         padding: 75px 6% 65px;
+
       }
 
       .resources-section {
+
         padding: 70px 6%;
+
       }
 
       .resource {
+
         grid-template-columns: 40px 1fr;
-        gap: 12px 20px;
-        padding: 28px 0;
+
+        gap: 10px 20px;
+
+        padding: 30px 0;
+
       }
 
       .resource-number {
+
         grid-row: span 2;
+
       }
 
       .location {
-        grid-column: 2;
-      }
 
-      .visit {
         grid-column: 2;
+
         justify-self: start;
-        margin-top: 5px;
+
+        text-align: left;
+
+        padding-top: 4px;
+
       }
 
       .note-section {
+
         padding: 65px 6%;
+
       }
 
       .note {
+
         padding: 35px 28px;
+
       }
 
       footer {
+
         flex-direction: column;
+
         gap: 10px;
+
         text-align: center;
+
       }
+
     }
 
     @media (max-width: 500px) {
 
       .logo {
+
         font-size: 29px;
+
       }
 
       .hero h1 {
+
         font-size: 62px;
+
       }
 
       .hero p {
+
         font-size: 16px;
+
       }
 
       .section-heading h2 {
+
         font-size: 42px;
+
       }
 
-      .resource-info h3 {
-        font-size: 25px;
+      .resource-button {
+
+        font-size: 21px;
+
       }
 
       .resource-info p {
+
         font-size: 13px;
+
       }
+
     }
+
   </style>
+
 </head>
 
 <body>
@@ -386,18 +635,24 @@
   <header class="site-header">
 
     <a href="index.html" class="logo">
+
       Alongside <span>♡</span>
+
     </a>
 
     <nav class="nav">
+
       <a href="index.html">Home</a>
+
       <a href="financial.html" class="active">Financial Support</a>
+
       <a href="psychological.html">Psychological Support</a>
+
       <a href="about.html">About Website</a>
+
     </nav>
 
   </header>
-
 
   <main>
 
@@ -406,19 +661,24 @@
     <section class="hero">
 
       <div class="eyebrow">
+
         FINANCIAL SUPPORT · NORTH AMERICA
+
       </div>
 
       <h1>North America</h1>
 
       <p>
+
         Organizations and programs that may help families affected by
+
         childhood cancer with financial costs, transportation,
+
         accommodation, and everyday needs.
+
       </p>
 
     </section>
-
 
     <!-- RESOURCES -->
 
@@ -429,25 +689,32 @@
         <div class="section-heading">
 
           <div class="eyebrow">
+
             FINANCIAL RESOURCES
+
           </div>
 
           <h2>
+
             Support for families.
+
           </h2>
 
           <p>
+
             The organizations below provide different forms of practical
+
             and financial assistance. Eligibility, application procedures,
+
             and available funding vary, so always check the organization's
+
             official website before applying.
+
           </p>
 
         </div>
 
-
         <div class="resource-list">
-
 
           <!-- 01 -->
 
@@ -456,30 +723,46 @@
             <div class="resource-number">01</div>
 
             <div class="resource-info">
-              <h3>Family Reach</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://familyreach.org/get-help/financial-assistance/"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Family Reach <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
+
                 Financial assistance for families facing cancer-related
+
                 costs such as housing, utilities, groceries, and
+
                 transportation.
+
               </p>
+
             </div>
 
             <div class="location">
+
               United States
+
             </div>
 
-            <a
-              href="https://familyreach.org/get-help/financial-assistance/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 02 -->
 
@@ -488,30 +771,46 @@
             <div class="resource-number">02</div>
 
             <div class="resource-info">
-              <h3>Pinky Swear Foundation</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://pinkyswear.org/childhood-cancer-financial-assistance"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Pinky Swear Foundation <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
+
                 Financial support that can help families with housing,
+
                 food, transportation, rent, utilities, and other
+
                 everyday expenses during treatment.
+
               </p>
+
             </div>
 
             <div class="location">
+
               United States
+
             </div>
 
-            <a
-              href="https://pinkyswear.org/childhood-cancer-financial-assistance"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 03 -->
 
@@ -520,30 +819,46 @@
             <div class="resource-number">03</div>
 
             <div class="resource-info">
-              <h3>The B+ Foundation</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://www.bepositive.org/need-help"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  The B+ Foundation <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
+
                 Financial assistance for families of children with cancer,
+
                 including support for travel, housing, prescriptions,
+
                 and household expenses.
+
               </p>
+
             </div>
 
             <div class="location">
+
               United States
+
             </div>
 
-            <a
-              href="https://www.bepositive.org/need-help"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 04 -->
 
@@ -552,29 +867,44 @@
             <div class="resource-number">04</div>
 
             <div class="resource-info">
-              <h3>Alex's Lemonade Stand Foundation</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://www.alexslemonade.org/childhood-cancer/for-families/travel-for-care"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Alex's Lemonade Stand Foundation <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
+
                 Travel assistance for families who need to travel for
+
                 childhood cancer treatment or clinical trials.
+
               </p>
+
             </div>
 
             <div class="location">
+
               US & Canada
+
             </div>
 
-            <a
-              href="https://www.alexslemonade.org/childhood-cancer/for-families/travel-for-care"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 05 -->
 
@@ -583,30 +913,46 @@
             <div class="resource-number">05</div>
 
             <div class="resource-info">
-              <h3>CancerCare</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://www.cancercare.org/financial"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  CancerCare <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
-                Limited financial and practical assistance for people
-                affected by cancer, including support related to
-                transportation and other treatment-related needs.
+
+                Limited financial and practical assistance for families
+
+                affected by cancer, including support for transportation
+
+                and other treatment-related needs.
+
               </p>
+
             </div>
 
             <div class="location">
+
               United States
+
             </div>
 
-            <a
-              href="https://www.cancercare.org/financial"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 06 -->
 
@@ -615,30 +961,46 @@
             <div class="resource-number">06</div>
 
             <div class="resource-info">
-              <h3>National Children's Cancer Society</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://thenccs.org/"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  National Children's Cancer Society <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
+
                 Financial assistance for families of children with cancer,
+
                 including transportation support and emergency help with
+
                 essential everyday expenses.
+
               </p>
+
             </div>
 
             <div class="location">
+
               United States
+
             </div>
 
-            <a
-              href="https://thenccs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 07 -->
 
@@ -647,30 +1009,46 @@
             <div class="resource-number">07</div>
 
             <div class="resource-info">
-              <h3>Tyler Robinson Foundation</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://www.trf.org/get-support"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Tyler Robinson Foundation <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
-                Grants for families of children with cancer to help cover
-                non-medical expenses such as housing, groceries, travel,
-                and other essential costs.
+
+                Financial assistance for families of children with cancer,
+
+                helping with non-medical expenses such as housing,
+
+                groceries, travel, and other essential costs.
+
               </p>
+
             </div>
 
             <div class="location">
+
               US & Canada
+
             </div>
 
-            <a
-              href="https://www.trf.org/get-support"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 08 -->
 
@@ -679,30 +1057,46 @@
             <div class="resource-number">08</div>
 
             <div class="resource-info">
-              <h3>Ronald McDonald House Charities</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://rmhc.org/our-core-programs"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Ronald McDonald House Charities <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
+
                 Accommodation, meals, family rooms, and other practical
+
                 support that can reduce the cost of staying near a
+
                 child's treatment.
+
               </p>
+
             </div>
 
             <div class="location">
+
               US & Canada
+
             </div>
 
-            <a
-              href="https://rmhc.org/our-core-programs"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 09 -->
 
@@ -711,30 +1105,46 @@
             <div class="resource-number">09</div>
 
             <div class="resource-info">
-              <h3>Clayton Dabney Foundation</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://www.claytondabney.org/"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Clayton Dabney Foundation <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
+
                 Financial and practical support for families of children
+
                 with late-stage cancer, including help intended to ease
+
                 family expenses during a difficult period.
+
               </p>
+
             </div>
 
             <div class="location">
+
               United States
+
             </div>
 
-            <a
-              href="https://www.claytondabney.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 10 -->
 
@@ -743,30 +1153,46 @@
             <div class="resource-number">10</div>
 
             <div class="resource-info">
-              <h3>Mercy Medical Angels</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://www.mercymedical.org/patients"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Mercy Medical Angels <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
-                Free transportation assistance for patients who need to
-                travel for medical care, including flights, ground
-                transportation, gas cards, and other travel options.
+
+                Transportation assistance for patients who need to travel
+
+                for medical care, including flights, ground transportation,
+
+                gas cards, and other travel options.
+
               </p>
+
             </div>
 
             <div class="location">
+
               United States
+
             </div>
 
-            <a
-              href="https://www.mercymedical.org/patients"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 11 -->
 
@@ -775,30 +1201,46 @@
             <div class="resource-number">11</div>
 
             <div class="resource-info">
-              <h3>Childhood Cancer Canada</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://www.childhoodcancer.ca/apply-for-support/"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  Childhood Cancer Canada <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
+
                 Compassionate Care assistance that may help families
+
                 facing emergency financial needs related to a child's
+
                 cancer journey.
+
               </p>
+
             </div>
 
             <div class="location">
+
               Canada
+
             </div>
 
-            <a
-              href="https://www.childhoodcancer.ca/apply-for-support/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
           <!-- 12 -->
 
@@ -807,37 +1249,52 @@
             <div class="resource-number">12</div>
 
             <div class="resource-info">
-              <h3>AMANC</h3>
+
+              <h3>
+
+                <a
+
+                  href="https://www.amanc.org/apoyo/"
+
+                  target="_blank"
+
+                  rel="noopener noreferrer"
+
+                  class="resource-button"
+
+                >
+
+                  AMANC <span>→</span>
+
+                </a>
+
+              </h3>
 
               <p>
+
                 Free comprehensive support for children with cancer and
+
                 their families, including accommodation, food, medicines,
+
                 transportation, and psychosocial services.
+
               </p>
+
             </div>
 
             <div class="location">
+
               Mexico
+
             </div>
 
-            <a
-              href="https://www.amanc.org/apoyo/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="visit"
-            >
-              Visit website →
-            </a>
-
           </article>
-
 
         </div>
 
       </div>
 
     </section>
-
 
     <!-- NOTE -->
 
@@ -846,63 +1303,59 @@
       <div class="note">
 
         <div class="eyebrow">
+
           BEFORE APPLYING
+
         </div>
 
         <h2>
+
           A note about financial assistance
+
         </h2>
 
         <p>
+
           Eligibility requirements, funding availability, application
+
           procedures, and supported expenses can change. Some programs
+
           require a referral or application through a hospital social
+
           worker or healthcare team. Before applying, visit the
+
           organization's official website and check the current
+
           requirements for your situation.
+
         </p>
 
       </div>
 
     </section>
 
-
     <!-- CLOSING -->
 
     <section class="closing">
 
       <div class="eyebrow">
+
         NORTH AMERICA
+
       </div>
 
       <h2>
+
         You don't have to navigate this alone.
+
       </h2>
 
       <p>
+
         If you are unsure where to begin, a child's healthcare team or
+
         hospital social worker may also be able to help identify
+
         programs available in your area.
-      </p>
 
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="footer-logo">
-      Alongside ♡
-    </div>
-
-    <div>
-      A resource platform for families.
-    </div>
-
-  </footer>
-
-</body>
-</html>
+      </p
