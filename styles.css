@@ -601,3 +601,156 @@ footer {
 
 }
 
+/* ––––––––––––––––
+FINANCIAL SUPPORT — REGIONS
+———————————– */
+
+.region-resources {
+padding: 10px 5% 75px;
+}
+
+.region-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 22px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.region-card {
+display: flex;
+flex-direction: column;
+
+min-height: 330px;
+padding: 32px;
+
+background: var(–light);
+border-radius: 22px;
+
+text-decoration: none;
+
+transition:
+transform .25s ease,
+box-shadow .25s ease;
+}
+
+.region-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 16px 35px rgba(0, 0, 0, .08);
+}
+
+.region-icon {
+width: 68px;
+height: 68px;
+
+display: grid;
+place-items: center;
+
+margin-bottom: 28px;
+
+border-radius: 50%;
+
+background: var(–cream);
+
+font-size: 31px;
+
+transition: transform .25s ease;
+}
+
+.region-card:hover .region-icon {
+transform: scale(1.06);
+}
+
+.region-card-content {
+display: flex;
+flex-direction: column;
+flex: 1;
+}
+
+.region-label {
+margin: 0 0 7px;
+
+color: var(–gold);
+
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 1.6px;
+}
+
+.region-card h2 {
+margin: 0 0 12px;
+
+font-family: “Cormorant Garamond”, serif;
+font-size: 34px;
+font-weight: 600;
+line-height: 1.05;
+}
+
+.region-description {
+max-width: 320px;
+
+margin: 0;
+
+color: var(–muted);
+
+font-size: 15px;
+line-height: 1.6;
+}
+
+.region-bottom {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 15px;
+
+margin-top: auto;
+padding-top: 28px;
+
+border-top: 1px solid rgba(180, 162, 118, .25);
+}
+
+.region-bottom span {
+color: var(–muted);
+
+font-size: 12px;
+letter-spacing: .5px;
+}
+
+.region-bottom strong {
+color: var(–green);
+
+font-size: 14px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+.region-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+}
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+.region-resources {
+padding: 5px 5% 55px;
+}
+
+.region-grid {
+grid-template-columns: 1fr;
+}
+
+.region-card {
+min-height: 300px;
+padding: 28px;
+}
+
+.region-card h2 {
+font-size: 31px;
+}
+
+}
