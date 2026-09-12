@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Asia · Alongside</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #F2ECDD;
+      --light: #FAF8F5;
+      --green: #536B52;
+      --gold: #B4A276;
+      --text: #1D1D1A;
+      --muted: #5C5A54;
+      --border: #D9D1C1;
+      --quote: #EEE5D3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--green);
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      font-size: 23px;
+      margin-left: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 14px;
+      color: var(--muted);
+      transition: 0.25s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--green);
+    }
+
+    .hero {
+      padding: 95px 0 80px;
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(58px, 8vw, 88px);
+      font-weight: 500;
+      line-height: 0.95;
+      color: var(--green);
+      margin-bottom: 28px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .resources-section {
+      padding: 30px 0 90px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      font-weight: 500;
+      color: var(--green);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 45px;
+    }
+
+    .resource {
+      display: grid;
+      grid-template-columns: 55px 1fr 150px;
+      gap: 28px;
+      align-items: start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      color: var(--gold);
+    }
+
+    .resource-info h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 27px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 9px;
+    }
+
+    .resource-info p {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 700px;
+      margin-bottom: 17px;
+    }
+
+    .resource-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 19px;
+      border: 1px solid var(--green);
+      border-radius: 50px;
+      color: var(--green);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 18px;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+
+    .resource-button:hover {
+      background: var(--green);
+      color: var(--light);
+    }
+
+    .location {
+      text-align: right;
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 8px;
+    }
+
+    .note {
+      margin-top: 70px;
+      padding: 38px;
+      background: var(--quote);
+    }
+
+    .note .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .note h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .note p {
+      color: var(--muted);
+      max-width: 800px;
+    }
+
+    .closing {
+      padding: 90px 0;
+      text-align: center;
+    }
+
+    .closing .eyebrow {
+      margin-bottom: 12px;
+    }
+
+    .closing h2 {
+      margin-bottom: 15px;
+    }
+
+    .closing p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        padding: 22px 0;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 14px 20px;
+      }
+
+      .hero {
+        padding: 70px 0 55px;
+      }
+
+      .resource {
+        grid-template-columns: 35px 1fr;
+        gap: 15px;
+        padding: 27px 0;
+      }
+
+      .location {
+        grid-column: 2;
+        text-align: left;
+        padding-top: 0;
+      }
+
+      .resource-info h3 {
+        font-size: 25px;
+      }
+
+      .note {
+        padding: 28px 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="index.html" class="logo">
+      Alongside <span>♡</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="financial.html" class="active">Financial Support</a>
+      <a href="psychological.html">Psychological Support</a>
+      <a href="about.html">About Website</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<main>
+
+  <section class="container hero">
+
+    <div class="eyebrow">
+      FINANCIAL SUPPORT · ASIA
+    </div>
+
+    <h1>Asia</h1>
+
+    <p>
+      A selection of organizations across Asia that support children
+      with cancer and their families through financial assistance,
+      accommodation, transportation, medical support, food and other
+      practical services.
+    </p>
+
+  </section>
+
+
+  <section class="container resources-section">
+
+    <div class="eyebrow">
+      FINANCIAL RESOURCES
+    </div>
+
+    <h2>Support for families.</h2>
+
+    <p class="section-intro">
+      These organizations provide practical, social or financial support
+      to children with cancer and their families. Open an organization’s
+      website to learn about eligibility and how to request support.
+    </p>
+
+
+    <!-- 01 -->
+
+    <div class="resource">
+
+      <div class="resource-number">01</div>
+
+      <div class="resource-info">
+
+        <h3>ASHIC</h3>
+
+        <p>
+          Family support for children with cancer, including low- to
+          no-cost accommodation near major pediatric oncology services
+          for families travelling from rural areas.
+        </p>
+
+        <a
+          href="https://www.ashic.org/"
+          target="_blank"
+          class="resource-button"
+        >
+          ASHIC →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Bangladesh
+      </div>
+
+    </div>
+
+
+    <!-- 02 -->
+
+    <div class="resource">
+
+      <div class="resource-number">02</div>
+
+      <div class="resource-info">
+
+        <h3>Yayasan Anyo Indonesia</h3>
+
+        <p>
+          Provides temporary accommodation for children with cancer
+          travelling to Jakarta for treatment, including meals and
+          everyday necessities for the child and accompanying family
+          member.
+        </p>
+
+        <a
+          href="https://www.yai-indonesia.org/"
+          target="_blank"
+          class="resource-button"
+        >
+          Yayasan Anyo Indonesia →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Indonesia
+      </div>
+
+    </div>
+
+
+    <!-- 03 -->
+
+    <div class="resource">
+
+      <div class="resource-number">03</div>
+
+      <div class="resource-info">
+
+        <h3>MAHAK</h3>
+
+        <p>
+          Financial and medical support for children with cancer and
+          their families, including assistance with treatment,
+          medication, accommodation and transportation.
+        </p>
+
+        <a
+          href="https://mahak-charity.org/en/"
+          target="_blank"
+          class="resource-button"
+        >
+          MAHAK →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Iran
+      </div>
+
+    </div>
+
+
+    <!-- 04 -->
+
+    <div class="resource">
+
+      <div class="resource-number">04</div>
+
+      <div class="resource-info">
+
+        <h3>Children’s Cancer Association of Japan</h3>
+
+        <p>
+          Financial assistance for families of children with cancer,
+          counselling by specialist social workers and lodging assistance
+          for families travelling for treatment.
+        </p>
+
+        <a
+          href="https://www.ccaj-found.or.jp/english/"
+          target="_blank"
+          class="resource-button"
+        >
+          Children’s Cancer Association of Japan →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Japan
+      </div>
+
+    </div>
+
+
+    <!-- 05 -->
+
+    <div class="resource">
+
+      <div class="resource-number">05</div>
+
+      <div class="resource-info">
+
+        <h3>King Hussein Cancer Foundation & Center</h3>
+
+        <p>
+          Cancer care and support for patients and families, including
+          financial and psychological assistance for eligible patients
+          and a nonprofit cancer-care insurance programme.
+        </p>
+
+        <a
+          href="https://www.khcc.jo/en"
+          target="_blank"
+          class="resource-button"
+        >
+          King Hussein Cancer Foundation →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Jordan
+      </div>
+
+    </div>
+
+
+    <!-- 06 -->
+
+    <div class="resource">
+
+      <div class="resource-number">06</div>
+
+      <div class="resource-info">
+
+        <h3>Children’s Cancer Center of Lebanon</h3>
+
+        <p>
+          Provides cancer treatment to children at no cost to their
+          families, supported through charitable funding.
+        </p>
+
+        <a
+          href="https://www.cccl.org.lb/"
+          target="_blank"
+          class="resource-button"
+        >
+          Children’s Cancer Center of Lebanon →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Lebanon
+      </div>
+
+    </div>
+
+
+    <!-- 07 -->
+
+    <div class="resource">
+
+      <div class="resource-number">07</div>
+
+      <div class="resource-info">
+
+        <h3>Hayim Association</h3>
+
+        <p>
+          Support for children with cancer and their families, including
+          financial assistance, transportation, equipment, welfare
+          support and family activities.
+        </p>
+
+        <a
+          href="https://www.hayim.org.il/"
+          target="_blank"
+          class="resource-button"
+        >
+          Hayim Association →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Israel
+      </div>
+
+    </div>
+
+
+    <!-- 08 -->
+
+    <div class="resource">
+
+      <div class="resource-number">08</div>
+
+      <div class="resource-info">
+
+        <h3>Children’s Cancer Foundation</h3>
+
+        <p>
+          Financial assistance for families experiencing hardship,
+          including support for food and maintenance, transportation,
+          medical costs and schooling.
+        </p>
+
+        <a
+          href="https://www.ccf.org.sg/programmes-and-services/core-services/financial-assistance/"
+          target="_blank"
+          class="resource-button"
+        >
+          Children’s Cancer Foundation →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Singapore
+      </div>
+
+    </div>
+
+
+    <!-- 09 -->
+
+    <div class="resource">
+
+      <div class="resource-number">09</div>
+
+      <div class="resource-info">
+
+        <h3>Sarawak Children’s Cancer Society</h3>
+
+        <p>
+          Financial assistance, transportation subsidies, medical
+          sponsorships and temporary accommodation with food and
+          transport for families travelling for treatment.
+        </p>
+
+        <a
+          href="https://sccs.org.my/"
+          target="_blank"
+          class="resource-button"
+        >
+          Sarawak Children’s Cancer Society →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Malaysia
+      </div>
+
+    </div>
+
+
+    <!-- 10 -->
+
+    <div class="resource">
+
+      <div class="resource-number">10</div>
+
+      <div class="resource-info">
+
+        <h3>St. Jude India ChildCare Centres</h3>
+
+        <p>
+          Free accommodation and holistic support for underprivileged
+          children undergoing cancer treatment, including transport,
+          nutritious food, counselling and support for parents.
+        </p>
+
+        <a
+          href="https://stjudechild.org/"
+          target="_blank"
+          class="resource-button"
+        >
+          St. Jude India ChildCare Centres →
+        </a>
+
+      </div>
+
+      <div class="location">
+        India
+      </div>
+
+    </div>
+
+
+    <!-- 11 -->
+
+    <div class="resource">
+
+      <div class="resource-number">11</div>
+
+      <div class="resource-info">
+
+        <h3>Indira Cancer Trust</h3>
+
+        <p>
+          Free support for cancer patients and families, including
+          financial aid, transport allowances, medication and equipment
+          support, nutritional assistance and a dedicated cancer helpline.
+        </p>
+
+        <a
+          href="https://indiracancertrust.org/"
+          target="_blank"
+          class="resource-button"
+        >
+          Indira Cancer Trust →
+        </a>
+
+      </div>
+
+      <div class="location">
+        Sri Lanka
+      </div>
+
+    </div>
+
+
+    <!-- 12 -->
+
+    <div class="resource">
+
+      <div class="resource-number">12</div>
+
+      <div class="resource-info">
+
+        <h3>Korean Association for Children with Leukemia and Cancer</h3>
+
+        <p>
+          Support programmes for children with cancer and their families,
+          including family programmes, educational support and assistance
+          related to treatment costs.
+        </p>
+
+        <a
+          href="https://www.childhoodcancer.or.kr/"
+          target="_blank"
+          class="resource-button"
+        >
+          Korean Association for Children with Leukemia and Cancer →
+        </a>
+
+      </div>
+
+      <div class="location">
+        South Korea
+      </div>
+
+    </div>
+
+
+    <div class="note">
+
+      <div class="eyebrow">
+        BEFORE APPLYING
+      </div>
+
+      <h3>A note about financial assistance</h3>
+
+      <p>
+        Eligibility, available funding and application procedures can
+        change. Some organizations provide support only to families
+        receiving treatment at specific hospitals or meeting particular
+        financial or medical criteria. Always check the organization’s
+        official website for current requirements before applying.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="closing">
+
+    <div class="container">
+
+      <div class="eyebrow">
+        ASIA
+      </div>
+
+      <h2>You don't have to navigate this alone.</h2>
+
+      <p>
+        If you are unsure where to start, a hospital social worker,
+        doctor or healthcare team may also be able to connect you
+        with local financial and practical support.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div>
+      © 2026 Alongside
+    </div>
+
+    <div>
+      Resources for families, one step at a time.
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>
